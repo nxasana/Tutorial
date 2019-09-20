@@ -18,8 +18,14 @@ class GenusController extends Controller
     {
         // replace this example code with whatever you need
 
+            $funFact = 'Octopuses can change the color of their body in just *three-tenths* of a second!';
+
+            $funFact = $this->get('markdown.parser')
+            ->transform($funFact);
+
         return $this->render('genus/show.html.twig', [
             'name'=> $genusName,
+            'funFact' => $funFact
         ]);
        
            
